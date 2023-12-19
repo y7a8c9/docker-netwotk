@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 8080:80
+    networks:
+      cust_network:
+        ipv4_address: 192.168.27.100
+
+  cmdline:
+    image: ubuntu
+    networks:
+      - cust_network
+
+networks:
+  cust_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.27.0/24
