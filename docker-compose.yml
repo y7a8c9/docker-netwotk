@@ -10,7 +10,7 @@ services:
         ipv4_address: 192.168.27.100
 
   cmdline:
-    image: ubuntu
+    image: busybox
     networks:
       - cust_network
 
